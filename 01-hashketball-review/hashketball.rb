@@ -126,3 +126,33 @@ def game_hash
     }
   }
 end
+
+def all_players
+  game_hash[:away][:players] + game_hash[:home][:players]
+end
+
+def find_player_by_name(player_name)
+  all_players.find do |player_hash|
+    # that has a name of player_name
+    player_name == player_hash[:name]
+  end
+end
+
+# knows the number of points scored by each player
+def num_points_scored(player_name)
+  # go through the players in the hash
+  # players_array = all_players
+
+  # look through the array of players for the player hash 
+  # found_player = find_player_by_name(player_name)
+
+  # return that player's points
+  find_player_by_name(player_name)[:points]
+end
+
+def shoe_size(player_name)
+  find_player_by_name(player_name)[:shoe]
+end
+
+# binding.pry
+# "pls work"
