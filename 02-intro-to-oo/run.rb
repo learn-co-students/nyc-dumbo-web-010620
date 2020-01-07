@@ -3,12 +3,6 @@ require 'pry'
 class BankAccount
   attr_reader :account_number
   attr_accessor :balance
-  # def account_number
-  #   @account_number
-  # end
-  # def account_number=(value)
-  #   @account_number = value
-  # end
 
   @@all = []
 
@@ -16,7 +10,6 @@ class BankAccount
     @balance = balance
     @account_number = account_number
 
-    p self
     @@all << self
   end
 
@@ -24,22 +17,28 @@ class BankAccount
     "Account # #{self.account_number} has a balance of $#{self.balance}"
   end
 
-  # instance method
-  # getter method
-  # def balance
-  #   # p local_variable
-  #   @balance
-  # end
+  def deposit(amount)
+    self.balance += amount
+    # or @balance += amount
+  end
 
-  # # setter method
-  # def balance=(new_balance)
-  #   # local_variable = "hmm"
-  #   # this is the tricky part...
-  #   @balance = new_balance
-  # end
-  
+  def withdraw(amount)
+    self.balance -= amount
+    # or @balance -= amount
+  end
+
   def self.all
     @@all
+  end
+
+  def self.find_by_account_number(account_number)
+    # inside class method, self is the BankAccount class
+    # self.all is the same here as BankAccount.all
+    self.all.find do |bank_account|
+      # each element inside of @@all is a bank account instance
+      # so we can call .account_number on the instance to read the account_number
+      bank_account.account_number == account_number
+    end
   end
 
 end # end of BankAccount class

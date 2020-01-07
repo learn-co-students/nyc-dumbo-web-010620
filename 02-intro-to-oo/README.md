@@ -53,10 +53,10 @@ end
 Write an implementation of a bank account that meets the following requirements:
 
 - [x] can print the balance of the account
-- can deposit money into the account
-- can withdraw money from the account
+- [x] can deposit money into the account
+- [x] can withdraw money from the account
 - [x] keeps track of the account holder
-- can show me all the bank accounts that have been created
+- [x] can show me all the bank accounts that have been created
 - *bonus* can find a bank account based on the account number
 
 ## Discussion Questions
