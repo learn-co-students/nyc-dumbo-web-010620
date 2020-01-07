@@ -7,7 +7,7 @@ Intro to Object Orientation
 - [ ] Explain how `self` changes based on context
 - [ ] Define attribute readers and writers using `attr_` macros
 - [ ] Explain the difference between local variables, class variables, and instance variables
-- [ ] Get more practice with enumerable methods (`each`, `map`, `select`, `find`)
+- [ ] (maybe) Get more practice with enumerable methods (`each`, `map`, `select`, `find`)
 
 ## Outline
 - Discuss Object Oriented Programming
@@ -25,9 +25,16 @@ Intro to Object Orientation
 
 
 ## Discuss
-- What are the benefits of Object Oriented Programming?
-- In Ruby, everything is an object
 - What is an object?
+  data (attributes, properties) + behavior
+- What does the phrase "In Ruby, everything is an object" mean?
+  you can give everything a behavior
+- What are the benefits of Object Oriented Programming?
+  simplifies what's repetitive: gives us a group functions
+  easier, makes it easy to organize code
+  can be really flexible! open to change
+  thinking about our code with nouns!
+
 - What is the difference between a class and an instance?
 
 ## Deliverables
@@ -36,17 +43,21 @@ Here is a naive implementation of a bank account in Ruby using only a hash which
 
 ```rb
 bank_account = { account_number: 12345, balance: 100 }
+bank_account2 = { account_number: 12345, balace: 100 }
+
+def deposit(bank_acct, money)
+  bank_acct[:balance] += money
+end
 ```
 
 Write an implementation of a bank account that meets the following requirements:
 
-- can print the balance of the account
+- [x] can print the balance of the account
 - can deposit money into the account
 - can withdraw money from the account
-- keeps track of the account holder
+- [x] keeps track of the account holder
 - can show me all the bank accounts that have been created
-*bonus*
-- can find a bank account based on the account number
+- *bonus* can find a bank account based on the account number
 
 ## Discussion Questions
 - What's the difference between a class and an instance?
