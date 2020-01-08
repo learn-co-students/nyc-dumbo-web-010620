@@ -34,9 +34,20 @@ One to Many Relationships
 
 What do the following mean in plain English? What do they mean in programming?
 
-* Model
-* Domain
+* Model - representation of something, -> class
+* Domain - area of expertise, domain name -> google.com, twitter.com
 * Domain modeling
+  YouTube
+  Videos, Comments
+  Video has many Comments
+  Comment belong to Video
+
+  Twitter
+  Tweet/Posts, User, Likes
+  Tweet belongs to User
+  User has many Tweets
+
+
 * Relationships
   * One to many relationship
   * Many to many relationship
@@ -57,18 +68,18 @@ Create a User class. The class should have these methods:
   - [x] `User#initialize` takes a username and a bio and creates a User instance.
   - [x] `User#username` returns a string for the username. _Should not_ be able to change after the user is created.
   - [x] `User#bio` returns a short biography for the user. _Should_ be able to change after the user is created.
-  - [ ] `User#post_tweet` takes a message, creates a new tweet, and adds it to the user's tweet collection.
-  - [ ] `User#tweets` returns an array of Tweet instances.
+  - [x] `User#post_tweet` takes a message, creates a new tweet, and adds it to the user's tweet collection.
+  - [x] `User#tweets` returns an array of Tweet instances.
   - [x] `User.all` returns all the User instances in our app.
-  - [ ] *bonus* `User.print_tweets` that prints the message of each tweet to the screen in a pretty way.
   - [ ] *bonus* `User.most_tweets` returns the instance of the user who has made the most tweets.
 
 Create a Tweet class. The class should have these methods:
-  - [ ] `Tweet#initialize` takes a message and a user and creates a Tweet instance.
-  - [ ] `Tweet#message` returns a string. _Should not_ be able to change after the tweet is created.
-  - [ ] `Tweet#user` returns an instance of the user class. _Should not_ be able to change after the tweet is created.
-  - [ ] `Tweet.all` returns all the Tweet instances in our app.
-  - [ ] `Tweet#username` returns the username of the tweet's user.
+  - [x] `Tweet#initialize` takes a message and a user and creates a Tweet instance.
+  - [x] `Tweet#message` returns a string. _Should not_ be able to change after the tweet is created.
+  - [x] `Tweet#user` returns an instance of the user class. _Should not_ be able to change after the tweet is created.
+  - [x] `Tweet.all` returns all the Tweet instances in our app.
+  - [x] `Tweet#username` returns the username of the tweet's user.
+  - [ ] *bonus* `Tweet.print_tweets` that prints the message of each tweet to the screen in a pretty way.
 
 ### Discussion Questions
 
@@ -76,3 +87,5 @@ Create a Tweet class. The class should have these methods:
 - What does Single Source of Truth mean?
 - What is a model? Domain? Domain model?
 - What is the relationship between a class and an instance?
+
+**NOTE** Save 10 minutes to talk about code challenges (at the end)
