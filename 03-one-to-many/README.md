@@ -71,7 +71,7 @@ Create a User class. The class should have these methods:
   - [x] `User#post_tweet` takes a message, creates a new tweet, and adds it to the user's tweet collection.
   - [x] `User#tweets` returns an array of Tweet instances.
   - [x] `User.all` returns all the User instances in our app.
-  - [ ] *bonus* `User.most_tweets` returns the instance of the user who has made the most tweets.
+  - [x] *bonus* `User.most_tweets` returns the instance of the user who has made the most tweets.
 
 Create a Tweet class. The class should have these methods:
   - [x] `Tweet#initialize` takes a message and a user and creates a Tweet instance.
@@ -79,7 +79,7 @@ Create a Tweet class. The class should have these methods:
   - [x] `Tweet#user` returns an instance of the user class. _Should not_ be able to change after the tweet is created.
   - [x] `Tweet.all` returns all the Tweet instances in our app.
   - [x] `Tweet#username` returns the username of the tweet's user.
-  - [ ] *bonus* `Tweet.print_tweets` that prints the message of each tweet to the screen in a pretty way.
+  - [x] *bonus* `Tweet.print_tweets` that prints the message of each tweet to the screen in a pretty way.
 
 ### Discussion Questions
 
