@@ -6,27 +6,27 @@
 
 ## CarOwner
 
-- `CarOwner.all`
+- [x] `CarOwner.all`
   - returns an array of car owner instances
-- `CarOwner#cars`
+- [x] `CarOwner#cars`
   - returns an array of all the cars that a specific owner has
-- `CarOwner#mechanics`
+- [x] `CarOwner#mechanics`
   - returns an array of all the mechanics that a specific owner goes to
-- `CarOwner.average_owned`
+- [x] `CarOwner.average_owned`
   - returns a float representing the average number of cars owned for all owners
 
 ## Car
 
-- `Car.all`
+- [x] `Car.all`
   - returns an array of all car instances
-- `Car.classification`
+- [x] `Car.classification`
   - returns an array of strings for all car classifications
-- `Car#expert_mechanics`
+- [x] `Car#expert_mechanics`
   - returns an array mechanic instances that have a specialty that matches the car classification
 
 ## Mechanic
 
-- `Mechanic.all`
+- [x] `Mechanic.all`
   - returns an array of all mechanic instances
 - `Mechanic#cars`
   - returns an array of car instances that a mechanic services
