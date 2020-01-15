@@ -24,6 +24,21 @@ Intro to SQL
 * What is CRUD?
 * How does an app like Slack use CRUD?
 
+* How can we establish relationships between a Tweet and a User in our Twitter example?
+
+**users**
+| *id* | *username*   | *bio*                     | 
+| 1    | "coffee_dad" | "just a coffee lovin dad" |
+| 2    | "tea_mom"    | "tea > coffee"            |
+
+**tweets**
+| *id* | *message*         |
+| 1    | "havin #a coffee" |
+| 2    | "java time"       |
+| 3    | "T for me"        |
+
+* (pair) How can we model the following domain using SQL tables? Game -< Review >- Player
+
 ## Set Up 
 
 1. Install the SQLite Browser if you haven't already [here](http://sqlitebrowser.org/)
