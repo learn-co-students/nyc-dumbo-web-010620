@@ -11,13 +11,12 @@ Active Record Associations
 ## Outline
 * Review migrations
   * `db:migrate` and `db:rollback`, `db:migrate:status`
-  * `add_column` migration
-  * Demonstrate `seeds.rb`
 * Review CRUD
 * Association methods
   * Before ActiveRecord, how did we write association methods?
   * How can we use ActiveRecord to write SQL to find associations?
   * What do `has_many` and `belongs_to` do for us?
+* Demonstrate `seeds.rb`
 
 ### Active Record Setup Checklist
 
@@ -35,21 +34,21 @@ Let's make a game review app so players can review the games they've played. For
 Our database tables would look something like this:
 
 #### games table
-| id | title          |
-|----|----------------|
-| 1  | Mario Kart     |
-| 2  | Stardew Valley |
-| 3  | Pokemon Go     |
+| id | title                     |
+|----|---------------------------|
+| 1  | Tetris 99                 |
+| 2  | LoZ: Breath of the Wild 2 |
+| 3  | Half-Life 3               |
 
 #### players table
 | id | name           |
 |----|----------------|
 | 1  | Ian            |
-| 2  | Leizl          |
-| 3  | Rei            |
+| 2  | Otha           |
+| 3  | Leizl          |
 
 #### reviews table
-| id | game_id  | player_id | review           |
+| id | game_id  | player_id | comment          |
 |----|----------|-----------|------------------|
 | 1  | 1        | 1         | Great!           |
 | 2  | 1        | 2         | Also great!      |
