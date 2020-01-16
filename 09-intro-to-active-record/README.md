@@ -15,6 +15,30 @@ Intro to ActiveRecord
 * Review project setup
 * Show how to use `rake` tasks
 * Choose a domain and set up ActiveRecord on our models (Game >-< Player)
+
+0. Setup the environment
+
+1. Create a migration (a set of instructions for maniulating the structure of the database)
+  `rake db:create_migration NAME=create_games`
+
+2. Write the migration
+  ```rb
+  create_table :games do |t|
+    t.string :title
+    t.string :genre
+    t.integer :price
+
+    t.timestamps
+    # created_at, updated_at
+  end
+  ```
+
+3. Run the migration `rake db:migrate`
+
+3.5 Check the migration
+   
+4. Create model and connect to active record
+
   * Demonstrate how to work with migration files: `migrate` and `rollback`
   * Write CRUD on a model using ActiveRecord
 
