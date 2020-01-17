@@ -9,9 +9,10 @@ Active Record Associations
 * Practice looking up library documentation for Active Record Migrations, Queries and Association Macros
 
 ## Outline
-* Review migrations
+* Review CRUD methods from yesterday
+* Review migrations by creating a join table
   * `db:migrate` and `db:rollback`, `db:migrate:status`
-* Review CRUD
+* Make the model
 * Association methods
   * Before ActiveRecord, how did we write association methods?
   * How can we use ActiveRecord to write SQL to find associations?
