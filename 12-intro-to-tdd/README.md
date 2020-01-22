@@ -22,10 +22,6 @@ Intro to Test Driven Development
 - Write tests first to scope out your feature first, then write code.
 - Remember "Red, Green, Refactor"
 
-[BDD: Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior-driven_development)
-- Features that don't test specific methods; a feature that requires a series of things (ex: logging in); testing a behavior.
-- This is done much more heavily in Mods 2, 3, 4, and 5.
-
 The need for tests.
 - One change, one break, will affect the bigger picture 
 - Writing tests can isolate which method broke, what caused a chain reaction breaking your app, and what you need to do to fix it.
