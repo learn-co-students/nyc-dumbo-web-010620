@@ -15,12 +15,21 @@ Intro to Test Driven Development
 
 ### Why do we need tests?
 
+- take account of the edge cases -> unexpected results
+- green light warriors unite -> we want some some assurance that our code works (test in isolate)
+- checking the behavior of your code -> arguments for methods and return value
+
+
 ### What and Why
 
 [TDD: Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)
 - You are going to write tests for what your feature should be doing, and ultimately those tests will drive your development process.
 - Write tests first to scope out your feature first, then write code.
 - Remember "Red, Green, Refactor"
+
+[BDD: Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior-driven_development)
+- Features that don't test specific methods; a feature that requires a series of things (ex: logging in); testing a behavior.
+- This is done much more heavily in Mods 2, 3, 4, and 5.
 
 The need for tests.
 - One change, one break, will affect the bigger picture 
