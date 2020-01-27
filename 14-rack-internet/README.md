@@ -12,7 +12,7 @@
   - IS THAT WHAT THE WWW STANDS FOR IN A WEB ADDRESS???? OMFG!!!!
   - What is a server? What is a client?
   - What is a request? What is a response? What does the request-response cycle have to do with servers and clients?
-    - What is the request itself made of?
+    - What is the request itself made of? The response?
   - What does a web browser do?
     - Are there any other technologies that can help me make an HTTP request?
 
