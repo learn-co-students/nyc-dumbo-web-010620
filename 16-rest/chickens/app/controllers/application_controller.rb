@@ -5,20 +5,23 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    set :method_override, true
   end
 
   get "/" do
     p "🌶" * 10
     p params
-    erb :potato
+    erb :root
   end
 
   get '/chickens' do #index
     @chickens = Chicken.all # kitchen
-    erb :chickens # present the chickens to the customer
+    erb :index # present the chickens to the customer
   end
 
-  ## untested disaster code
+  get "/chickens/new" do
+    erb :new
+  end
 
   get "/chickens/:id" do #show
     @chicken = Chicken.find(params[:id])
@@ -26,12 +29,24 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/chickens" do # creates a chicken
-    @chicken = Chicken.create(name: name_somehow, weight: from_somewhere)
+    @chicken = Chicken.create(params)
+    redirect to "/chickens/#{ @chicken.id }"
+  end
+
+  ## untested disaster code
+
+  get "/chickens/:id/edit" do
+    @chicken = Chicken.find(params[:id])
+    erb :edit
   end
 
   patch "/chickens/:id" do
-    @chicken = Chicken.find(id_somehow)
-    @chicken.update(name: user_input_string_name, weight: user_input_string_integer)
+    # p "🖕" * 10
+    # p params
+    @chicken = Chicken.find(params[:id])
+    # params.delete(:"_method")
+    @chicken.update(params)
+    redirect to "/chickens/#{ @chicken.id }"
   end
 
   delete "/chickens/:id" do

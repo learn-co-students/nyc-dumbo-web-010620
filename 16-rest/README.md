@@ -8,11 +8,11 @@
   * How can I make a request that isn't a GET?
 
 # Code through
-* Index of chickens
-* Show one chicken
-* Create a chicken
-  * How tf do forms work
-  * Mass assignment
+✅ Index of chickens
+✅ Show one chicken
+✅ Create a chicken
+  ✅ How tf do forms work
+  ✅ Mass assignment
 
 # Tomorrow
 * Updating a chicken
