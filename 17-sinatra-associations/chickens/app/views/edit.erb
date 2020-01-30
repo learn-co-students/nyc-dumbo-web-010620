@@ -1,0 +1,16 @@
+<form method="post" action="/chickens/<%= @chicken.id %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <ul>
+    <li>
+      <label for="chicken-name">Name</label>
+      <input id="chicken-name" type="text" name="name" value="<%= @chicken.name %>" />
+    </li>
+    <li>
+      <label for="chicken-weight">Weight</label>
+      <input id="chicken-weight" type="number" name="weight" value="<%= @chicken.weight %>" />
+    </li>
+    <li>
+      <input type="submit" />
+    </li>
+  </ul>
+</form>
