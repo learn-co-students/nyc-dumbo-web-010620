@@ -1,0 +1,11 @@
+<h1><%= @coop.name %></h1>
+
+<ol>
+  <% @coop.chickens.each do |chicken| %>
+    <li>
+      <a href="/chickens/<%= chicken.id %>">
+        <%= chicken.name %>
+      </a>
+    </li>
+  <% end %>
+</ol>

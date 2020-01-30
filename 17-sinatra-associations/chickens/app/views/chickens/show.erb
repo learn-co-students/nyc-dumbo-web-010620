@@ -1,3 +1,9 @@
 <h1><%= @chicken.name %></h1>
 Weight: <%= @chicken.weight %>
+Coop: <a href="/coops/<%= @chicken.coop_id %>">
+  <%= @chicken.coop.name %>
+</a>
 
+<a href="/chickens/<%= @chicken.id %>/edit">    
+  Edit!
+</a>

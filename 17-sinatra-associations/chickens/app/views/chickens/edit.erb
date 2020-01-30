@@ -10,6 +10,15 @@
       <input id="chicken-weight" type="number" name="weight" value="<%= @chicken.weight %>" />
     </li>
     <li>
+      <label for="chicken-coop">Coop ID</label>
+      <!-- <input id="chicken-coop" type="number" name="coop_id" value="<%= @chicken.coop_id %>" /> -->
+      <select name="coop_id" id="chicken-coop">
+        <% @coops.each do |coop| %>
+          <option value="<%= coop.id %>"><%= coop.name %></option>
+        <% end %>
+      </select>
+    </li>
+    <li>
       <input type="submit" />
     </li>
   </ul>

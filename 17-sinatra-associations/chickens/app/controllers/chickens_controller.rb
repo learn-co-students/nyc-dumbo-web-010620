@@ -23,6 +23,7 @@ class ChickensController < ApplicationController
 
   get "/chickens/:id/edit" do
     @chicken = Chicken.find(params[:id])
+    @coops = Coop.all
     erb :"chickens/edit"
   end
 
