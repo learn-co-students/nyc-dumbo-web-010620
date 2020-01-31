@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  level_of_sleaziness: 1
+  city: one
+
+two:
+  name: MyString
+  level_of_sleaziness: 1
+  city: two

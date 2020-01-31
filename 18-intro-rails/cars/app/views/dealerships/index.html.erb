@@ -1,0 +1,11 @@
+<ul>
+<% @dealerships.each do |dealership| %>
+  <li>
+    <!-- <a href="/dealerships/<%= dealership.id %>"> -->
+    <!-- </a> -->
+    <%# link_to dealership.name, dealership_path(dealership.id) %>
+    <%# link_to dealership.name, dealership_path(dealership) %>
+    <%= link_to dealership.name, dealership %>
+  </li>
+<% end %>
+</ul>
