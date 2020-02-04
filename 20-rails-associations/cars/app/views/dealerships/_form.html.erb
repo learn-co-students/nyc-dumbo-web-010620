@@ -1,0 +1,20 @@
+<%= form_for @dealership do |form| %>
+
+  <%= form.label :name %> 
+  <%= form.text_field :name %> 
+
+  <%= form.label :level_of_sleaziness %> 
+  <%= form.text_field :level_of_sleaziness %> 
+
+
+
+<!--   
+  <select name="dealership[city_id]">
+    <option value="1">Chicago</option>
+    <option value="2">NYC</option>
+    <option value="3">LA</option>
+  </select>
+ -->
+  <%= form.submit %>
+  
+<% end %>

@@ -1,0 +1,21 @@
+<h1>
+  <%= @dealership.name %>
+</h1>
+
+
+
+
+<h2>Create Location</h2>
+<%= form_with(model: @location) do |form| %>
+
+  <%= form.hidden_field :dealership_id %>
+
+  <%= form.label :city_id %>
+  <%= form.collection_select :city_id, @cities, :id, :name %>
+
+  <%= form.submit %>
+<% end %>
+
+
+<%= link_to 'Edit', edit_dealership_path(@dealership) %>
+<%= link_to 'Back', dealerships_path %>

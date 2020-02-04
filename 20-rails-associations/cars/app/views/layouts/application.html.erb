@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cars</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h2>Main navigation</h2>
+        <ul>
+          <li>
+            <a href="/cars">Cars</a>
+          </li>
+          <li>
+            <a href="/dealerships">Dealerships</a>
+          </li>
+          <li>
+            <a href="/makes">Makes (manufacturers)</a>
+          </li>
+          <li>
+            <a href="/models">Models</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>
