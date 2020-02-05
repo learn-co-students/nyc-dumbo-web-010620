@@ -1,0 +1,22 @@
+New Form for a Studio
+
+<ul>
+  <% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+  <li> <%= error %> </li>
+  <% end %>
+  <% end %>
+</ul>
+
+<%= form_for @studio do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :founding_year %>
+  <%= f.number_field :founding_year %>
+
+  <%= f.submit %>
+<% end %>

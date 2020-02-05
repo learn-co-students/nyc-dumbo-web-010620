@@ -1,0 +1,7 @@
+<h1>All the Studios</h1>
+<ul>
+  <% @studios.each do |studio| %>
+
+  <li><%= link_to studio.name, studio_path(studio) %></li>
+  <% end %>
+</ul>

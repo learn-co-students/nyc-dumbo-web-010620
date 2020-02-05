@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Studio.destroy_all
+Studio.create(name:"Saban", location: "Cali", founding_year: 1980)

@@ -6,6 +6,8 @@
 - Explain the difference between render vs. redirect_to
 - Review RESTful Routes in Rails
 
+Studio -< TvShow
+
 ---
 
 ### Why Use Validations?
