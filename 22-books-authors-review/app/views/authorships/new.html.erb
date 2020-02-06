@@ -1,0 +1,22 @@
+
+<% if !@authorship.valid? %>
+<ul>
+  <% @authorship.errors.full_messages.each do |error| %>
+    <li>
+      <%= error %>
+    </li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @authorship do |f| %>
+
+  <%= f.label :author_id %>
+  <%= f.collection_select :author_id, @authors, :id, :name %>
+
+  <%= f.label :book_id %>
+  <%= f.collection_select :book_id, @books, :id, :title %>
+
+  <%= f.submit %>
+
+<% end %>
