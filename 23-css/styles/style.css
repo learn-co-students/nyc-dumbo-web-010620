@@ -1,0 +1,33 @@
+@keyframes grow {
+    from {
+        width: 100px;
+        height: 100px;
+    }
+    to {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@keyframes colorchange {
+    from {
+        background-color: darkgoldenrod;
+    }
+    to {
+        background-color: aquamarine;
+    }
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: darkgoldenrod;
+    border: 3px solid black;
+    display:inline-block;
+}
+
+.box:hover {
+    animation: colorchange 2s, grow 2s;
+}
+
+

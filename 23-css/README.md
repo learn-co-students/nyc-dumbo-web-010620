@@ -59,6 +59,7 @@ Link: https://puzzleweb.ru/en/images/css/1_1.png
 # Selector
 - What is a selector?
     ```It is a pattern of elements and other terms that tell the browser which HTML elements should be selected to have the CSS property values inside the rule applied to them. ```
+
 - Types of selectors
     - Type: This group includes selectors that target an HTML element such as an <h1>.
     `h1 {}`
@@ -101,9 +102,6 @@ A declaration is made up of 2 parts.
 A note on the difference between `display: inline;` and `display: inline-block`
 
 `Compared to display: inline, the major difference is that inline-block allows to set a width and height on the element. Also, with display: inline, top and bottom margins & paddings are not respected, and with display: inline-block they are.`
-
-
-
 
 # Lets make some boxes!
 - Create 4 div tags with the class of box and nest them in one single div tag with the class of container
