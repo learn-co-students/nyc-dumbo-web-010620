@@ -1,50 +1,34 @@
 class ApplicationController < ActionController::Base
 
-  skip_before_action :verify_authenticity_token
+  before_action :setup_notification_stuff, :setup_auth_stuff
 
-  before_action :setup
+  def setup_notification_stuff
+    @errors = flash[:errors]
+    @notification = flash[:notification]
+  end
 
-  def get_notification
-    flash["message"]
-  end 
-
-  def set_notification(message)
-    flash["message"] = message
+  def setup_auth_stuff
+    @logged_in = logged_in?
+    @logged_in_user = User.find(current_user_id) if logged_in?
+    @can_vote = logged_in? && @logged_in_user.can_vote
   end
 
   private
 
-  # def remaining_votes
-  #   session["votes"]
-  # end
-
-  # def use_one_vote
-  #   session["votes"] -= 1
-  # end
-
-  # def can_vote
-  #   remaining_votes > 0
-  # end
+  def log_out_user!
+    session.delete(:user_id)
+  end
 
   def log_in_user(user_id)
     session[:user_id] = user_id
   end
 
-  def log_out_user
-    session[:user_id] = nil
+  def logged_in?
+    !!current_user_id
   end
 
-  def setup
-
-    @logged_in = !!session[:user_id] #!= nil
-    if @logged_in
-      @logged_in_user_id = session[:user_id]
-      @logged_in_user = User.find(@logged_in_user_id)
-      @remaining_votes = @logged_in_user.remaining_votes
-      @can_vote = @logged_in_user.can_vote
-    end
-    
-    @notification = get_notification
-  end
+  def current_user_id
+    session[:user_id]
+  end 
 
 end

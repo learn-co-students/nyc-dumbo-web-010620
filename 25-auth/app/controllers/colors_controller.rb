@@ -1,7 +1,5 @@
 class ColorsController < ApplicationController
 
-  # before_action :do_the_thing
-
   def index
     if request.path != colors_path
       redirect_to colors_path

@@ -6,17 +6,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    # @user = User.new
-    # @user.username = params[:user][:username]
-    # @user.password=(params[:user][:password])
-    # @user.save
-
     if @user.valid?
-      log_in_user(@user.id)
+      log_in_user @user.id
       redirect_to colors_path
     else
-      @errors = @user.errors.full_messages
-      render :new
+      flash[:errors] = @user.errors.full_messages
+      redirect_to new_user_path
     end
   end
 

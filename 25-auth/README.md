@@ -30,5 +30,3 @@
   * Route
   * View
 
-
-# BCrypt::Password.new(@password.salt + BCrypt::Password.new(BCrypt::Engine.hash_secret("cowabunga", @password.salt)).checksum) == "cowabunga"

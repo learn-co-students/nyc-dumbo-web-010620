@@ -13,17 +13,14 @@ class User < ApplicationRecord
     self.remaining_votes > 0
   end
 
+  has_secure_password
+
   # def password=(value)
-  #   # # byebug
-  #   # p value
-  #   # p "😻" * 100
   #   self.password_digest = BCrypt::Password.create(value)
   # end
 
-  # def authenticate(value)
-  #   BCrypt::Password.new(self.password_digest) == value
+  # def authenticate(password)
+  #   BCrypt::Password.new(self.password_digest) == password
   # end
-
-  has_secure_password
 
 end
