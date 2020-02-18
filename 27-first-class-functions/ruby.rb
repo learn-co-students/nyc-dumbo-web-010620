@@ -1,13 +1,17 @@
-# working with arrays
-nums = [1,2,3]
+# arr = [1,2,3]
 
-# how does this work in js?
-nums.each do |num|
-  puts num
+# arr.each do |num|
+#   puts num
+# end
+
+
+fruit = "water"
+
+def say_hi(fruit)
+
+  puts "hi class lol, here's some #{fruit}"
 end
 
-# global vars
+also_hi = say_hi
 
-# method vars
-
-# hoisting?
+say_hi(fruit)

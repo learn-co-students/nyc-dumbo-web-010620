@@ -3,7 +3,7 @@
 ## SWBATs
 - [ ] Write functions in the correct syntax
 - [ ] Explain the differences and similarities between methods in Ruby and functions in JS
-- [ ] Distinguish between a function and its invocation
+- [ ] Distinguish between a function definition and its invocation
 - [ ] Explain what it means for functions to be first-class citizens
 - [ ] Explain difference between `var`, `let`, and `const`, and explain hoisting
 
