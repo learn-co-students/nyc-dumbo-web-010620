@@ -238,7 +238,7 @@ If you need quicker and more simple debugging, `console.log` or `console.dir` is
 
 - **INDENTATION AND PROPER STYLE ARE ALSO SUPER IMPORTANT MOVING FORWARD**. Airbnb has an amazing [JavaScript Style Guide](https://github.com/airbnb/javascript) if you're unsure about how to format your JS code. Trust me, learn to indent properly now before you end up in a curly bracket hellscape.
 
-![who would win, curly boi](https://i.imgur.com/ZwfLpVW.jpg)
+![who would win, curly boi](https://i.kym-cdn.com/photos/images/facebook/001/257/329/781.jpg)
 
 ---
 
