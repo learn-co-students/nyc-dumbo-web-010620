@@ -1,0 +1,5 @@
+- 1st class functions
+  - callbacks
+  - array methods
+- hoisting(start with functions, then let/const, then var)
+- scope
