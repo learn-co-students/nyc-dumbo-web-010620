@@ -6,6 +6,12 @@
 - [ ] Identify important attributes on the event object and their uses
 - [ ] Combine knowledge of DOM manipulation and events to allow user interaction to change DOM
 
+## Three Pillars of Javascript
+
+- Manipulating the DOM 
+- Handling Events <-----
+- Communicating with the Server
+
 ## Outline
 - Discuss browser events
 - Manipulate Wikipedia using browser events
@@ -19,12 +25,25 @@
     - how to stop the page from reloading
     - how to get input field value
 
+## Notes
+
 ### What are some common things users do on a webpage?
+
+click
+scroll
+type (press a key)
+submit
+hover
+move the mouse
+select stuff/highlight
+
 
 [All the Events](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 ### What are the steps for creating interaction with the DOM?
-
+1. Find the element that we care about
+2. Figure out what kind of event to listen for
+3. Tell Javascript what function to run when that event happens
 
 ## What are Web Events 🤔
 
