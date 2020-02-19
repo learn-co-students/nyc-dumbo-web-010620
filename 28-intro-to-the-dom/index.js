@@ -33,7 +33,7 @@ const ducksArray = [
   {
     id: 1,
     name: "The Classic",
-    imageUrl: "https://cdn.shopify.com/s/files/1/0026/1996/5555/products/e662008fcd2a667cd6b645cd984df31f_1024x1024.jpg?v=1535761344",
+    imageUrl: "https://static.turbosquid.com/Preview/001213/610/JS/3D-model-rubber-duck-04_Z.jpg",
     rating: 5
   },
   {

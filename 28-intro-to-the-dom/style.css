@@ -2,7 +2,7 @@
   --font-primary: Lato, 'Helvetica Neue', Helvetica, sans-serif;
   --font-alt: 'Alegreya', cursive;
   --background-color: rgb(181, 216, 254);
-  --sidebar-background-color: rgb(255, 242, 98);
+  --sidebar-background-color: rgb(254, 229, 111);
   --ribbon-color: rgb(238, 68, 51);
   --ribbon-color-dark: rgb(157, 41, 31);
 }
@@ -64,7 +64,7 @@ aside h1 {
   padding: 0.5em;
 }
 
-.ribbon {
+aside .ribbon {
   display: block;
   width: calc(100% + 20px);
   height: 50px;
@@ -77,12 +77,12 @@ aside h1 {
   top: 60px;
 }
 
-.ribbon:before, .ribbon:after {
+aside .ribbon:before, .ribbon:after {
   content: "";
   position: absolute;
 }
 
-.ribbon:before {
+aside .ribbon:before {
   height: 0;
   width: 0;
   bottom: -10px;
@@ -91,7 +91,7 @@ aside h1 {
   border-left: 10px solid transparent;
 }
 
-.ribbon:after {
+aside .ribbon:after {
   height: 0;
   width: 0;
   right: 0;
@@ -158,7 +158,7 @@ section {
   position: relative;
   padding: 8px;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
 }
 
 #detail .image img {
