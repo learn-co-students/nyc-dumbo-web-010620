@@ -47,10 +47,9 @@ h1 {
 
 /* sidebar */
 aside {
-  padding: 0 2rem;
   grid-area: nav;
+  padding: 0 2rem;
   background-color: var(--sidebar-background-color);
-  /* border-right: 2px solid black; */
 }
 
 aside h1 {
@@ -141,7 +140,6 @@ aside .side-button:hover {
 /* detail */
 main {
   grid-area: content;
-  padding: 2rem;
   background-color: var(--background-color);
 }
 
@@ -160,7 +158,6 @@ main {
 
 #detail .image img {
   width: 100%;
-  /* border: 2px solid rgb(33, 33, 33); */
 }
 
 #detail .image .rating {

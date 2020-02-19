@@ -17,6 +17,11 @@ let alsoCheese = cheese // pass by reference
 alsoCheese.name = "parm"
 cheese.name // parm
 
+let num1 = 4
+let num2 = num1 // pass by value
+
+num2 = num2 + 1 // 5
+num1 // 4
 
 
 /**** arrays and objects ****/
