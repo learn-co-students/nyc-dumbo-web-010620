@@ -7,12 +7,6 @@
 - [ ] Use JS to select DOM nodes
 - [ ] Use JS to add, remove, and edit DOM nodes
 
-### Three Pillars of Javascript
-
-- Manipulating the DOM
-- Handling Events
-- Communicating with the Server
-
 ### The Document Object Model Overview
 - What is the DOM?
   - The DOM (Document Object Model) is a representation of an HTML document as a **tree** (more on this later) that can be manipulated with JavaScript

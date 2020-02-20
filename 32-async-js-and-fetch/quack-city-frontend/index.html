@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya|Lato&display=swap" rel="stylesheet">
+  <script src="./js/data.js"></script>
+  <script defer src="./js/index.js"></script>
+  <title>Welcome to Quack City</title>
+</head>
+<body>
+  <aside>
+    <h1 id="logo">Quack City</h1>
+    <h2 class="ribbon">All Ducks</h2>
+    <ul id="ducks-container" class="side-list">
+      <!-- add ducks here -->
+    </ul>
+    <hr>
+    <button class="side-button" id="new-duck-button">
+      Add Duck
+    </button>
+  </aside>
+  <main>
+    <div id="detail">
+      <h1>Put A Duck Here</h1>
+    </div>
+  </main>
+  <div id="modal">
+    <div class="contents">
+      <span id="close-modal">X</span>
+      <form id="new-duck-form">
+        <h1>Create New Duck</h1>
+        <label for="name">Name</label>
+        <input type="text" name="name">
+        <label for="image_url">Image URL</label>
+        <input type="text" name="image_url">
+        <input type="submit" value="Create Duck">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
