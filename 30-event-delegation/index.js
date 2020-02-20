@@ -1,5 +1,5 @@
 /****** DOM Elements ******/
-const duckList = document.querySelector("#ducks-container")
+const duckListUl = document.querySelector("#ducks-container")
 const duckBtn = document.querySelector("#new-duck-button")
 const closeModalSpan = document.querySelector("#close-modal")
 const modalDiv = document.querySelector("#modal")
@@ -42,7 +42,7 @@ function renderDuckListItem(duckObj) {
   duckLi.classList.add("item")
 
   // 3. Append to its parent element
-  duckList.append(duckLi)
+  duckListUl.append(duckLi)
 }
 
 function renderDuckList(ducksArray) {
