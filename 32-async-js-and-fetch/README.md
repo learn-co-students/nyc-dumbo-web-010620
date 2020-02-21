@@ -28,7 +28,7 @@ function sleep(time){
 }
 
 console.log('Starting the sleep function')
-sleep(10)
+sleep(1000)
 console.log('Wow that sleep function took forever to run. 1 Star 🌟')
 ```
 
