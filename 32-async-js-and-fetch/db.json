@@ -2,7 +2,7 @@
   "ducks": [
     {
       "id": 1,
-     " name:": "The Classic",
+      "name": "The Classic",
       "imageUrl": "https://static.turbosquid.com/Preview/001213/610/JS/3D-model-rubber-duck-04_Z.jpg",
       "rating": 5
     },
@@ -28,7 +28,7 @@
       "id": 5,
       "name": "The Dinosaur",
       "imageUrl": "https://cdn11.bigcommerce.com/s-nf2x4/images/stencil/1280x1280/products/865/7097/TRex-Dinosaur-Rubber-Duck-Wild-Republic-1__79706.1556655416.jpg",
-      "rating": 10
+      "rating": "9"
     }
   ]
 }
