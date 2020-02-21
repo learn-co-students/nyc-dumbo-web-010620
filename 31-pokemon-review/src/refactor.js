@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   searchInput.addEventListener('input', () => {
     const userInput = searchInput.value
     const filteredPokemon = POKEMON.filter((pokemon) => pokemon.name.includes(userInput))
-    pokemonContainer.innerHTML = ""
 
     renderPokemonCards(filteredPokemon)
   })
@@ -47,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderPokemonCards(pokeArray) {
+    pokemonContainer.innerHTML = "" // reset the container
     pokeArray.forEach((pokemon) => renderOnePokemon(pokemon))
   }
 
