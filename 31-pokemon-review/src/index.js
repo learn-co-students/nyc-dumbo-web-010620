@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log(POKEMON)
 
   // 1. find where we put it on the page (look for a element to put it in)
   const pokeContainer = document.querySelector("#pokemon-container")
@@ -8,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.querySelector("#pokemon-search-input")
   // 2. determine the type of event we care about
   searchInput.addEventListener('input', e => {
+    // 3. write callback function to run when that event happens
     const userInput = searchInput.value
     // as something is typed, only display the pokemon cards whose name match the user input
 
@@ -34,12 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       pokeContainer.append(card)
     })
   })
-  // 3. write callback function to run when that event happens
 
-
-
-
-  // get one pokemon on the page
 
   POKEMON.forEach((pokemon) => {
     pokeContainer.innerHTML = pokeContainer.innerHTML + `
@@ -53,17 +48,5 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   `
   })
-  console.log(pokeContainer)
-  // 2. could use innerHTML to add some HTML to the page
-
 
 })
-
-/* <div class="pokemon-card">
-  <div class="pokemon-frame">
-    <h1 class="center-text">charizard</h1>
-    <div class="pokemon-image">
-      <img data-id="7" data-action="flip" class="toggle-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png">
-    </div>
-  </div>
-</div> */
