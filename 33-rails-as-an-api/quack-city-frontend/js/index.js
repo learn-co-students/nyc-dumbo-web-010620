@@ -57,7 +57,11 @@ duckListUl.addEventListener("click", event => {
 
   if (event.target.className === "delete") {
     const duckLi = event.target.closest(".item")
-    // TODO: delete using fetch
+    const duckId = parseInt(event.target.dataset.id)
+    fetch(`http://localhost:3000/ducks/${duckId}`, {
+      method: "DELETE"
+    })
+    // optimistic rendering, we aren't waiting for the fetch before removing from the page
     duckLi.remove()
   }
 })
