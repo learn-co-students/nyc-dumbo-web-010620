@@ -80,7 +80,7 @@ The HTML of how you should render the selected bake in the `#detail` div should 
   <form id="score-form" data-id="1">
     <input value="10" type="number" name="score" min="0" max="10" step="1">
     <input type="submit" value="Rate">
-  </form>
+  </form>2
 ```
 
 You can either use the data from your initial fetch with ALL bakes to render the detail view, or you can make another fetch to the following endpoint:
