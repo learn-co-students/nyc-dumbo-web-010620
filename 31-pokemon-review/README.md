@@ -9,6 +9,13 @@
 - Callbacks
 - Constructors and Prototypes or ES6 Classes (optional)
 
+## Notes
+
+- it's tough to implement from scratch!
+- understanding deliverables
+- figuring out your strategies, breaking down the problems
+
+
 ---
 
 Hello, your assignment today is to re-create the functionality of our
@@ -36,6 +43,7 @@ search.
 
 ### Deliverables:
 
+1. Render all the pokemon
 1.  Implement a filter functionality for your Pokemon list.
 1.  Implement a flip functionality on each Pokemon.
 1.  Your search should include pokemon whose names are **not** exact matches
