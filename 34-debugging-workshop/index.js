@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault()
     // check this, what do we need an empty string for?
     const username = document.getElementById('name-input').value
-    const username = form.username.value
+    // const username = form.username.value
 
     const jokeList = document.getElementById('joke-list')
 
