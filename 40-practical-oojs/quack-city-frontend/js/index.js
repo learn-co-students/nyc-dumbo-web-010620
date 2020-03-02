@@ -48,6 +48,33 @@ newDuckForm.addEventListener("submit", function (event) {
 })
 
 // EVENT DELEGATION
+detailDiv.addEventListener("submit", event => {
+  if (event.target.id === "score-form") {
+    event.preventDefault()
+    const rating = event.target.score.value
+    const duckId = parseInt(event.target.dataset.id)
+    const duckObj = ducksArray.find(duck => duck.id === duckId)
+
+    fetch(`http://localhost:3000/ducks/${duckObj.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        rating: rating
+      })
+    })
+      .then(r => r.json())
+      .then(updatedDuckData => {
+        // we have to keep our global ducks array updated since we are using it for rendering out each individual duck's detail
+        duckObj.rating = updatedDuckData.rating
+        // once we've updated the duck, re-render it
+        renderDuckDetail(duckObj)
+      })
+
+  }
+})
+
 duckListUl.addEventListener("click", event => {
   if (event.target.className === "name") {
     const duckId = parseInt(event.target.dataset.id)
@@ -83,33 +110,6 @@ function renderDuckDetail(duckObj) {
       <input type="submit" value="Rate">
     </form>
   `
-  // NESTED EVENT LISTENER
-  const scoreForm = detailDiv.querySelector("#score-form")
-  scoreForm.addEventListener("submit", e => {
-    e.preventDefault()
-
-    const rating = scoreForm.score.value
-
-    fetch(`http://localhost:3000/ducks/${duckObj.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        rating: rating
-      })
-    })
-      .then(r => r.json())
-      .then(updatedDuckData => {
-        // we have to keep our global ducks array updated since we are using it for rendering out each individual duck's detail
-        const foundDuckObj = ducksArray.find(duck => duck.id === duckObj.id)
-        foundDuckObj.rating = updatedDuckData.rating
-        // once we've updated the duck, re-render it
-        renderDuckDetail(foundDuckObj)
-      })
-
-  })
-
 }
 
 function renderDuckListItem(duckObj) {
