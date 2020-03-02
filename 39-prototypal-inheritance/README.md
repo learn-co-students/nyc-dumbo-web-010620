@@ -9,6 +9,44 @@
 
 ### Notes
 
+```rb
+class Dog
+  attr_reader :name
+
+  @@all = []
+
+  def initialize(name)
+    @name = name
+    @@all << self
+  end
+
+  def speak
+    "woof my name is #{self.name}"
+  end 
+
+  def self.find(name)
+    @@all.find do |dog|
+      dog.name == name
+    end
+  end
+
+end
+
+dog = Dog.new("fezzik")
+dog.name
+```
+
+
+
+
+
+
+
+
+
+
+
+
 ### Object Creation in JavaScript
 
 - Let's imagine we have an application that needs to construct robot objects in JavaScript. Each robot should have a `name`, `weight`, and `specialty`. We could create several using the object literal syntax:
