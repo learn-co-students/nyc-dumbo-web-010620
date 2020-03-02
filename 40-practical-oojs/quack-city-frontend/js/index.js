@@ -1,5 +1,4 @@
-/****** Application State *******/
-let ducksArray = []
+const adapter = new APIAdapter("http://localhost:3000")
 
 /****** DOM Elements ******/
 const duckListUl = document.querySelector("#ducks-container")
@@ -29,20 +28,11 @@ newDuckForm.addEventListener("submit", function (event) {
   }
 
   // make fetch happen
-  fetch("http://localhost:3000/ducks", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    },
-    body: JSON.stringify(newDuckObj)
-  })
-    .then(response => response.json())
+  adapter.createDuck(newDuckObj)
     .then(responseDuckObj => {
-      ducksArray.push(responseDuckObj)
-      renderDuckListItem(responseDuckObj) // render to the list
+      const newDuck = new Duck(responseDuckObj)
+      newDuck.renderLi(duckListUl) // render to the list
     })
-
 
   modalDiv.classList.remove("open") // close the modal
 })
@@ -51,25 +41,14 @@ newDuckForm.addEventListener("submit", function (event) {
 detailDiv.addEventListener("submit", event => {
   if (event.target.id === "score-form") {
     event.preventDefault()
+
     const rating = event.target.score.value
     const duckId = parseInt(event.target.dataset.id)
-    const duckObj = ducksArray.find(duck => duck.id === duckId)
+    const duckObj = Duck.all.find(duck => duck.id === duckId)
 
-    fetch(`http://localhost:3000/ducks/${duckObj.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        rating: rating
-      })
-    })
-      .then(r => r.json())
+    updateDuck(duckObj.id, rating)
       .then(updatedDuckData => {
-        // we have to keep our global ducks array updated since we are using it for rendering out each individual duck's detail
-        duckObj.rating = updatedDuckData.rating
-        // once we've updated the duck, re-render it
-        renderDuckDetail(duckObj)
+        duckObj.updateRating(updatedDuckData.rating)
       })
 
   }
@@ -78,59 +57,26 @@ detailDiv.addEventListener("submit", event => {
 duckListUl.addEventListener("click", event => {
   if (event.target.className === "name") {
     const duckId = parseInt(event.target.dataset.id)
-    const duckObj = ducksArray.find(duck => duck.id === duckId)
-    renderDuckDetail(duckObj)
+    const duckObj = Duck.all.find(duck => duck.id === duckId)
+    duckObj.renderDetail(detailDiv)
   }
 
   if (event.target.className === "delete") {
     const duckLi = event.target.closest(".item")
     const duckId = parseInt(event.target.dataset.id)
-    fetch(`http://localhost:3000/ducks/${duckId}`, {
-      method: "DELETE"
-    })
+    adapter.deleteDuck(duckId)
     // optimistic rendering, we aren't waiting for the fetch before removing from the page
     duckLi.remove()
   }
 })
 
-/****** Render Helpers ******/
-function renderDuckDetail(duckObj) {
-  detailDiv.innerHTML = `
-    <h1>${duckObj.name}</h1>
-    <p class="category">
-      Category: <span>${duckObj.category_name}</span>
-    </p>
-    <div class="image">
-      <h2 class="rating">${duckObj.rating}</h2>
-      <img src="${duckObj.image_url}">
-    </div>
-    <h2 id="duck-rating">Rate That Duck</h2>
-    <form id="score-form" data-id="${duckObj.id}">
-      <input type="number" name="score" value="${duckObj.rating}" min="0" max="10" step="1">
-      <input type="submit" value="Rate">
-    </form>
-  `
-}
-
-function renderDuckListItem(duckObj) {
-  const duckLi = document.createElement("li")
-  duckLi.classList.add("item")
-  duckLi.innerHTML = `
-     <span data-id="${duckObj.id}" class="name">${duckObj.name}</span>
-     <button data-id="${duckObj.id}" class="delete">X</button>
-  `
-  duckListUl.append(duckLi)
-}
-
-function renderDuckList(ducksArray) {
-  ducksArray.forEach(duckObj => renderDuckListItem(duckObj))
-}
-
 /****** Initial Render ******/
-fetch("http://localhost:3000/ducks")
-  .then(response => response.json())
+adapter.getDucks()
   .then(responseDucksArray => {
-    ducksArray = responseDucksArray // save the ducks in a global variable so we can access it from other functions
-    renderDuckList(ducksArray)
-    renderDuckDetail(ducksArray[0])
+    responseDucksArray.forEach(duckObj => {
+      const newDuck = new Duck(duckObj)
+      newDuck.renderLi(duckListUl)
+    })
+
+    Duck.all[0].renderDetail(detailDiv)
   })
