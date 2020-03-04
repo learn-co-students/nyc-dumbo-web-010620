@@ -30,6 +30,7 @@ class Animal {
     this.imageUrl = animalObj.image_url
   }
 }
+
 //VS
 class Animal {
   constructor({ id, name, donations, image_url: imageUrl }) {
@@ -39,7 +40,11 @@ class Animal {
     this.imageUrl = imageUrl
   }
 }
+new Animal({ id: 1, name: "Koala", donation: 100, image_url: "something" })
 
+document.addEventListener("mouseover", e => {
+    console.log(e.screenX, e.screenY)
+})
 // nice for working with big objects, like `event`
 document.body.addEventListener("mousemove", ({ screenX, screenY }) => {
   console.log(screenX, screenY)
