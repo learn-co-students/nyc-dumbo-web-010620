@@ -12,6 +12,10 @@ class App extends React.Component {
     searchTerm: ""
   }
 
+
+
+
+
   componentDidMount(){
     fetch("http://localhost:4000/musicians")
       .then(r => r.json())
@@ -23,12 +27,17 @@ class App extends React.Component {
   }
 
 
+
+
+
   thisIsTheFunctionThatWillChangeTheSearchTerm = (theTermFromTheChild) => {
     // console.log(theTermFromTheChild, "LOGGED IN APP");
     this.setState({
       searchTerm: theTermFromTheChild
     })
   }
+
+
 
 
 
@@ -51,12 +60,8 @@ class App extends React.Component {
       this.setState({
         musicians: theNewArray
       })
-
     })
-
-
   }
-
 
 
 
@@ -81,11 +86,8 @@ class App extends React.Component {
 
 
 
-
   updateOneMusician = (id, numberToIncreasePlayed) => {
-
     let foundObject = this.state.musicians.find(musicianObj => musicianObj.id === id)
-
     fetch(`http://localhost:4000/musicians/${id}`, {
       method: "PATCH",
       headers: {
@@ -113,11 +115,11 @@ class App extends React.Component {
         musicians: theUpdatedArray
       })
     })
-
-
-
-
   }
+
+
+
+
 
   willReturnAnArray = () => {
     let filteredArrayByName = this.state.musicians.filter((musicianObj) => {
@@ -125,6 +127,9 @@ class App extends React.Component {
     })
     return filteredArrayByName
   }
+
+
+
 
 
   render(){
