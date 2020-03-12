@@ -1,0 +1,28 @@
+{
+  "musicians": [
+    {
+      "id": 1,
+      "musician": "Otha",
+      "instrument": "French Horn",
+      "played": 4000
+    },
+    {
+      "id": 2,
+      "musician": "Leizl",
+      "instrument": "Bagpipes",
+      "played": 10000
+    },
+    {
+      "id": 3,
+      "musician": "Eric",
+      "instrument": "Xylophone",
+      "played": 20
+    },
+    {
+      "id": 4,
+      "musician": "Turducken",
+      "instrument": "Piano",
+      "played": 2
+    }
+  ]
+}
