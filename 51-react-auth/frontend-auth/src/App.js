@@ -5,16 +5,75 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import ProfileContainer from './ProfileComponents/ProfileContainer'
 
+import {withRouter} from 'react-router-dom'
 
+
+// withRouter(boringComponent) => funComponent
 
 class App extends React.Component {
 
+
+  state={
+    user: {
+      id: 0,
+      username: "",
+      snacks: []
+    }
+  }
+
   handleLoginSubmit = (userInfo) => {
     console.log("Login form has been submitted")
+
+    fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(userInfo)
+    })
+    .then(r => r.json())
+    .then((resp) => {
+
+      if (resp.id) {
+        this.setState({
+          user: resp
+        }, () => {
+          this.props.history.push("/profile")
+        })
+      } else {
+        alert(resp.error)
+      }
+
+    })
+
+
   }
 
   handleRegisterSubmit = (userInfo) => {
     console.log("Register form has been submitted")
+    fetch("http://localhost:3000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        username: userInfo.username,
+        password: userInfo.password
+      })
+    })
+    .then(r => r.json())
+    .then((registeredUser) => {
+
+      this.setState({
+        user: registeredUser
+      }, () => {
+        this.props.history.push("/profile")
+      })
+
+    })
+
+
+
   }
 
   renderForm = (routerProps) => {
@@ -26,10 +85,11 @@ class App extends React.Component {
   }
 
   renderProfile = (routerProps) => {
-    return <ProfileContainer />
+    return <ProfileContainer user={this.state.user}/>
   }
 
   render(){
+    console.log(this.props, "APP PROPS");
     return (
       <div className="App">
         <NavBar/>
@@ -46,7 +106,7 @@ class App extends React.Component {
 
 }
 
-export default App
+export default withRouter(App)
 
 
 
