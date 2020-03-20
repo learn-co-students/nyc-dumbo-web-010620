@@ -22,8 +22,28 @@ class App extends React.Component {
     token: ""
   }
 
+  componentDidMount() {
+
+    
+    if (localStorage.token) {
+      fetch("http://localhost:3000/persist", {
+        headers: {
+          "Authorization": `bearer ${localStorage.token}`
+        }
+      })
+      .then(r => r.json())
+      .then(this.handleResp)
+
+
+
+    }
+  }
+
+
+
   handleResp = (resp) => {
     if (resp.user) {
+      localStorage.token = resp.token
       this.setState({
         user: resp.user,
         token: resp.token
@@ -34,6 +54,18 @@ class App extends React.Component {
       alert(resp.error)
     }
   }
+
+  addOneSnack = (snackObj) => {
+
+    this.setState({
+      user: {
+        ...this.state.user,
+        snacks: [...this.state.user.snacks, snackObj]
+      }
+    })
+
+  }
+
 
 
   handleLoginSubmit = (userInfo) => {
@@ -82,7 +114,11 @@ class App extends React.Component {
   }
 
   renderProfile = (routerProps) => {
-    return <ProfileContainer user={this.state.user}/>
+    return <ProfileContainer
+      user={this.state.user}
+      token={this.state.token}
+      addOneSnack={this.addOneSnack}
+    />
   }
 
   render(){

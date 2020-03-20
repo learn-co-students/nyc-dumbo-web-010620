@@ -20,7 +20,10 @@ class ProfileContainer extends Component {
           }
         </ol>
 
-        <NewSnackForm />
+        <NewSnackForm
+          token={this.props.token}
+          addOneSnack={this.props.addOneSnack}
+        />
 
       </div>
     );

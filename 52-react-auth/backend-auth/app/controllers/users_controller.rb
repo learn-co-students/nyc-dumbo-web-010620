@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authorized, only: [:persist]
+
 
   def create
     @user = User.create(user_params)
@@ -12,6 +14,12 @@ class UsersController < ApplicationController
   end
 
 
+
+  def persist
+    infoToSaveInBox = {user_id: @user.id}
+    wristband = encode_token(infoToSaveInBox)
+    render json: {user: UserSerializer.new(@user), token: wristband}
+  end
 
 
   def login
