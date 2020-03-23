@@ -19,7 +19,7 @@ class App extends React.Component {
 
   componentDidMount() {
    if (localStorage.token){
-     fetch("http://localhost:4000/persist", {
+     fetch("http://localhost:3000/persist", {
        headers: {
          "Authorization": `Bearer ${localStorage.token}`
        }
@@ -27,6 +27,14 @@ class App extends React.Component {
        .then(r => r.json())
        .then(this.handleResp)
     }
+
+    fetch("http://localhost:3000/burgers")
+      .then(r=> r.json())
+      .then((burgers) => {
+        this.setState({
+          burgers
+        })
+      })
   }
 
   handleResp = (resp) => {
@@ -42,7 +50,7 @@ class App extends React.Component {
   }
 
   handleLoginSubmit = (userInfo) => {
-   fetch(`http://localhost:4000/login`, {
+   fetch(`http://localhost:3000/login`, {
      method: "POST",
      headers: {
        "content-type": "application/json"
@@ -54,7 +62,7 @@ class App extends React.Component {
   }
 
   handleRegisterSubmit = (userInfo) => {
-   fetch(`http://localhost:4000/users`, {
+   fetch(`http://localhost:3000/users`, {
      method: "POST",
      headers: {
        "content-type": "application/json"

@@ -1,5 +1,5 @@
-eric = User.create(username: "Eric", password: "123")
-otha = User.create(username: "Leizl", password: "123")
+eric = User.create(username: "Eric", password: "abc123")
+otha = User.create(username: "Leizl", password: "abc123")
 
 burgers = [
     { name: "Good Burger",
@@ -39,7 +39,7 @@ burgers = [
     },
     { name: "Green Eggs and Hamburger",
       description: "Cooked by Sam",
-      image: "https://stupiddope.com/wp-content/uploads/2016/05/mcdonalds-green-angry-birds-burger-01.jpg",
+      image: "https://media.timeout.com/images/103334884/630/472/image.jpg",
       price: rand(100)
     },
     { name: "Veggie Burger",
