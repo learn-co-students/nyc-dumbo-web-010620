@@ -15,7 +15,22 @@ class PastOrderForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log("How many order does this person have?");
+    fetch("http://localhost:3000/users/history", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        findTheUserByThisUsername: this.state.username
+      })
+    })
+    .then(r => r.json())
+    .then((resp) => {
+      this.setState({
+        count: resp.count
+      })
+    })
+
   }
 
   renderText = () => {

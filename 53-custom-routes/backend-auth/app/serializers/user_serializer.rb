@@ -1,5 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :username
+  attributes :id, :username
   has_many :orders
+  # has_many / belongs_to has the serializer call upon the other serializer
 
 end

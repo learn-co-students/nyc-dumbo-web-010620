@@ -10,6 +10,20 @@ const OrderContainer = (props) => {
 
   const handleClick = (e) => {
     console.log("Submitted the order! How do we make that persist?");
+    const burger_ids = burgers.map(burger => burger.id)
+    console.log(burger_ids, props.token);
+
+    fetch("http://localhost:3000/orders",{
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "Authorization": `bearer ${props.token}`
+      },
+      body: JSON.stringify({
+        burger_ids: burger_ids
+      })
+    })
+
   }
 
 

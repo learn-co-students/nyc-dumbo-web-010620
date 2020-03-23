@@ -18,16 +18,19 @@ class Order extends React.Component{
     return (
       <div className="card" >
         <h4 onClick={this.handleClick}>{
-            /* RENDER TIMESTAMP */
+            this.props.order.niceTimestampForGrandma
           }</h4>
-        <p>{this.props.price}</p>
-
         {
           this.state.clicked
             ?
           <ul className="burgersList">
             {
-              /* RENDER BURGERS FOR THE ORDERS HERE */
+              this.props.order.burger_orders.map((burger_order) => {
+                return <SingularBurger
+                  key={burger_order.id}
+                  burger={burger_order.burger}
+                />
+              })
             }
           </ul>
             :

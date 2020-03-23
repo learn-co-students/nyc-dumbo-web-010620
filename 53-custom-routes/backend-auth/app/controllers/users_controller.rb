@@ -7,6 +7,15 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def history
+    @found_user = User.find_by(username: params[:findTheUserByThisUsername])
+    if @found_user
+      render json: {count: @found_user.orders.count}
+    else
+      render json: {count: -2}
+    end
+  end
+
   def create
     @user = User.create(user_params)
     if @user.valid?

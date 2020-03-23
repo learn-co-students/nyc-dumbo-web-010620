@@ -1,5 +1,5 @@
 eric = User.create(username: "Eric", password: "abc123")
-otha = User.create(username: "Leizl", password: "abc123")
+leizl = User.create(username: "Leizl", password: "abc123")
 
 burgers = [
     { name: "Good Burger",
@@ -61,18 +61,18 @@ burgers = [
 
 Burger.create(burgers)
 
-otha_order = Order.create(user: otha)
+leizl_order = Order.create(user: leizl)
 
-otha_order.burgers << Burger.third
-otha_order.burgers << Burger.fourth
-otha_order.burgers << Burger.fifth
+leizl_order.burgers << Burger.third
+leizl_order.burgers << Burger.fourth
+leizl_order.burgers << Burger.fifth
 
-otha_order2 = Order.create(user: otha)
+leizl_order2 = Order.create(user: leizl)
 
-otha_order2.burgers << Burger.all.sample
-otha_order2.burgers << Burger.all.sample
-otha_order2.burgers << Burger.all.sample
-otha_order2.burgers << Burger.all.sample
+leizl_order2.burgers << Burger.all.sample
+leizl_order2.burgers << Burger.all.sample
+leizl_order2.burgers << Burger.all.sample
+leizl_order2.burgers << Burger.all.sample
 
 eric_order = Order.create(user: eric)
 
