@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import {addWizard} from '../Redux/wizardActions'
 
 
 class WizardForm extends Component {
@@ -28,7 +29,7 @@ class WizardForm extends Component {
     })
     .then(r => r.json())
     .then((newWizard) => {
-      this.props.addWizardPropKey(newWizard);
+      this.props.addWizard(newWizard);
     })
   }
 
@@ -57,27 +58,10 @@ class WizardForm extends Component {
 
 
 
-
-// actionCreator => addWizard (func Definition)
-// actionObject => action (POJO)
-const addWizard = (wizzyObject) => {
-
-  let actionObject = {
-    type: "ADD_WIZARD",
-    payload: wizzyObject
-  }
-
-  return actionObject
-
-}
-
-
-
-
 // mapDispatchToProps is a POJO that has key-value pairs in it that will be merged as props
   // the values of mapDispatchToProps is going to be a function definition (actionCreator)
 let mapDispatchToProps = {
-  addWizardPropKey: addWizard
+  addWizard
 }
 
 

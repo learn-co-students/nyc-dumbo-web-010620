@@ -4,6 +4,7 @@ import WizardDisplay from './Components/WizardDisplay'
 import WizardForm from './Components/WizardForm'
 import Header from './Components/Header'
 import {connect} from 'react-redux'
+import {setAllWizards, fetchAndSetAllWizards} from './Redux/wizardActions'
 
 class App extends Component {
 
@@ -13,6 +14,8 @@ class App extends Component {
     .then((wizzies) => {
       this.props.setAllWizards(wizzies)
     })
+
+    // this.props.fetchAndSetAllWizards()
   }
 
   render() {
@@ -28,17 +31,9 @@ class App extends Component {
 
 
 
-let setAllWizards = (wizardsArray) => {
-  return {
-    type: "SET_ALL_WIZARDS",
-    payload: wizardsArray
-  }
-}
-
-
-
 let mapDispatchToProps = {
-  setAllWizards
+  setAllWizards,
+  fetchAndSetAllWizards
 }
 
 

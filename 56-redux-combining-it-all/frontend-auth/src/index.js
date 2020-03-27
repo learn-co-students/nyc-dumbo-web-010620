@@ -13,62 +13,12 @@ import { Provider } from 'react-redux'
 import { combineReducers } from 'redux'
 
 
-let initialState = {
-  wizards: [],
-  cats: []
-}
+import ReduxThunk from 'redux-thunk';
+import {applyMiddleware, compose} from 'redux'
+// import {compose} from 'redux'
 
-const wizardReducer = (state = initialState, action) => {
-  console.log(action, "FROM INSIDE THE REDUCER");
-  switch (action.type) {
-    case "ADD_WIZARD":
-
-      let copyOfArray = [...state.wizards, action.payload]
-      return {
-        ...state,
-        wizards: copyOfArray
-      }
-
-
-    case "SET_ALL_WIZARDS":
-      return {
-        ...state,
-        wizards: action.payload
-      }
-
-    default:
-      return state
-  }
-}
-
-
-
-
-
-
-
-
-
-
-let userInitialState = {
-  id: 0,
-  username: "",
-  user_wizards: []
-}
-
-
-const userReducer = (state = userInitialState, action) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
-
-
-
-
-
-
+import userReducer from './Redux/userReducer'
+import wizardReducer from './Redux/wizardReducer'
 
 
 
@@ -86,15 +36,7 @@ let rootReducer = combineReducers(singularObject)
 
 
 
-
-
-
-
-
-
-
-
-
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
 
@@ -102,7 +44,7 @@ let rootReducer = combineReducers(singularObject)
 
 let storeObject = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeEnhancers(applyMiddleware(ReduxThunk))
 )
 
 
