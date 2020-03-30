@@ -1,7 +1,16 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {logOut} from '../Redux/actions'
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+  const handleClick = () => {
+      console.log("you are now logging out");
+      props.logOut()
+      localStorage.clear()
+  }
+
   return(
     <ul className="nav">
       <li>
@@ -16,8 +25,11 @@ const NavBar = () => {
       <li>
         <NavLink to="/profile">Profile</NavLink>
       </li>
+      <li>
+        <button onClick={handleClick}>Log out</button>
+      </li>
     </ul>
   )
 };
 
-export default NavBar;
+export default connect(null, {logOut})(NavBar);

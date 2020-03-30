@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  resources :user_snacks
-  resources :snacks
   resources :users, only: [:create]
-  resources :snacks, only: [:create]
+  resources :snacks, only: [:index]
 
   post "/login", to: "users#login"
   # verb "url", to: "controllerName#instanceMethodName"

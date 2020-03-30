@@ -1,11 +1,27 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import Snack from './Snack'
 
-const SnackContainer = () => {
+const SnackContainer = (props) => {
   return (
-    <ul>
-      { /* All the snacks in our app */ }
-    </ul>
+    <div>
+      <h2>Here are all the snacks available in our store!</h2>
+      <ul>
+        {
+          props.snacks.map((snackObj) => {
+            return <Snack key={snackObj.id} snack={snackObj}/>
+          })
+        }
+      </ul>
+    </div>
   )
 };
 
-export default SnackContainer;
+const mstp = (reduxState) => {
+  return {
+    snacks: reduxState.snacks.all
+  }
+}
+
+
+export default connect(mstp, {})(SnackContainer);
